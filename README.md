@@ -1,13 +1,13 @@
 🐳 Setting Up Jupyter Notebook with Docker
 
-This guide walks you through creating a **Dockerfile** for setting up and running a Jupyter Notebook inside a Docker container. 🧑‍💻
+This guide walks you through creating a Dockerfile for setting up and running a Jupyter Notebook inside a Docker container. 🧑‍💻
 
 ---
 
 🚀 Step 01 - Create a Dockerfile
 Start by creating a `Dockerfile` in **VS Code** with the following code:
 
-```dockerfile
+```docker file
 # Use an official Python runtime as a parent image
 FROM python:3.12
 
@@ -48,28 +48,47 @@ CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--al
 jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root
 ```
 
+🔑 Step 03 - Setup Password
+After launching Jupyter Notebook, you must retrieve the token and set a password.
+
+Retrieve the Token by running this command in the terminal:
+
+bash
+Copy code
+jupyter server list
+This will display something like:
+
+bash
+Copy code
+Currently running servers:
+http://localhost:8888/?token=your_token_here :: /usr/src/app
+Copy the Token and open the Jupyter Notebook interface at:
+
+http://localhost:8888
+
+Could you paste the token into the login prompt to access Jupyter Notebook for the first time?
+
+Once logged in, you can set a password within the Jupyter interface by going to:
+
+File Menu > Security Settings > Set Password
+Use the password for future logins instead of the token.
+
 🌐 Access Jupyter Notebook
+After setting the password, you can access your Jupyter Notebook by navigating to:
 
-- Open your browser and type the following URL:
-  
-  `http://localhost:8888`
+http://localhost:8888
 
-- You should now see the Jupyter Notebook interface running in your browser.
+Use your password for secure access.
 
----
+📸 Preview
 
+Add a screenshot of the running Jupyter Notebook inside Docker.
 
 🎨 Cool Enhancements
-- Customize your environment further by adding libraries or extensions to your Dockerfile.
-- Add volume mounting to save your work outside the container:
-
-```dockerfile
+Customize your environment further by adding libraries or extensions to your Dockerfile.
+Add volume mounting to save your work outside the container:
+docker file
+Copy code
 VOLUME ["/usr/src/app"]
-```
 
---- 
-
-That's it! 🎉 You've successfully set up **Jupyter Notebook** in a Docker container. Happy coding!
-
----
-
+That's it! 🎉 You've successfully set up Jupyter Notebook in a Docker container and secured it with a password. Happy coding!
