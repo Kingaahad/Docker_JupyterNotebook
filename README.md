@@ -53,15 +53,17 @@ After launching Jupyter Notebook, you must retrieve the token and set a password
 
 Retrieve the Token by running this command in the terminal:
 
-bash
 Copy code
+```bash
 jupyter server list
+```
 This will display something like:
 
-bash
 Copy code
+```bash
 Currently running servers:
 http://localhost:8888/?token=your_token_here :: /usr/src/app
+```
 Copy the Token and open the Jupyter Notebook interface at:
 
 http://localhost:8888
@@ -89,6 +91,7 @@ Customize your environment further by adding libraries or extensions to your Doc
 Add volume mounting to save your work outside the container:
 docker file
 Copy code
+```bash
 VOLUME ["/usr/src/app"]
-
+```
 That's it! 🎉 You've successfully set up Jupyter Notebook in a Docker container and secured it with a password. Happy coding!
