@@ -82,9 +82,6 @@ http://localhost:8888
 
 Use your password for secure access.
 
-📸 Preview
-
-Add a screenshot of the running Jupyter Notebook inside Docker.
 
 🎨 Cool Enhancements
 Customize your environment further by adding libraries or extensions to your Dockerfile.
